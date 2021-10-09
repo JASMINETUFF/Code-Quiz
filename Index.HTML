@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<!-- Makes the webpage responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- My Javascript code quiz -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Links to my style CSS sheet -->
+    <link rel="stylesheet" href="Assets/Style.css" />
+    <!--  My quiz title -->
+    <title>Coding Quiz</title>
+  </head>
+  <body>
+      <!-- Create a class called container which is gonna hold my timer and buttons and Headers/p text -->
+    <div class="container">
+            <!-- Div created for the questions section so we can select for JS and create a class called hide so we know it hidden by defualt -->
+        <div id="question-container" class ="hide">
+               <!-- Give and ID so we can work with java script and or class so we can style in css.  -->
+               <div id="questions">Questions</div>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer #1</button>
+            <button class="btn">Answer #2</button>
+            <button class="btn">Answer #3</button>
+            <button class="btn">Answer #4</button> 
+        </div>
+    </div>
+        <!-- Create a class for the controls -->
+    <div class="controls"></div>
+    <!-- Create Buttons for start and next. Gave them both and ID and class. -->
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <!-- Added a hide class for this button -->
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    
+    
+        
+   
+    <!-- Link to script.js -->
+    <script src="Script.js"></script>
+  </body>
+</html>
