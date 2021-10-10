@@ -1,39 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+var storedScores = JSON.parse(localStorage.getItem("userData"));
+var highScoresArea = document.querySelector("#highScoresList");
+var backBtn = document.querySelector("#backButton");
+var clearBtn = document.querySelector("#clearScores");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Code-Quiz</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/Style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
-        </style>
-</head>
 
-<body>
-    <div class="container d-flex justify-content-center mt-5">
-        <div class="game-box col-lg-8 p-4">
+function displayScores() {
+    if (storedScores !== null) {
+        var scoreList = document.createElement("ol");
+        scoreList.className = "scoreListClass";
+        for (var i = 0; i < storedScores.length; i++) {
+            var initials = storedScores[i].inits;
+            var scores = storedScores[i].userScore
+            var scoreEntry = document.createElement("li");
+            scoreEntry.innerHTML = initials + " - " + scores;
+            scoreList.appendChild(scoreEntry);
+        }
+        highScoresArea.appendChild(scoreList);
+    }
+};
 
-            <div class="row">
-                <div class="col-4"></div>
-                <div id="highScoresDiv" class="col-12">
-                    <h5 id="scoresArea">High Scores</h5>
-                    <div id="highScoresList"></div>
+displayScores();
 
-                    <button class="btn btn-primary" id="backButton">Go Back</button>
-                    <button class="btn btn-primary" id="clearScores">Clear Scores</button>
-                </div>
-                <div class="col-4"></div>
-            </div>
-            
-        </div>
-    </div>
-</body>
+backBtn.addEventListener("click", function () {
+    location.href = "index.html";
+});
 
-<script src="High Scores.js"></script>
+clearBtn.addEventListener("click", function () {
+    highScoresArea.innerHTML = "";
+    window.localStorage.clear();
 
-</html>
+});
