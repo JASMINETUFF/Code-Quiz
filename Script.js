@@ -92,7 +92,6 @@ function displayQuestion(question){
      var button =document.createElement("button")
     button.className="btn-primary btn-block text-left"
     button.innerText=element
-    // questionanswers.innerHTML=""
     questionanswers.appendChild(button)
     button.addEventListener("click", displaynextQuestion)
     });
@@ -126,24 +125,25 @@ function correction(response){
     if(response){
         alert.innerText= "Good"
         console.log("Good")
+
     }else {
         alert.innerText="Wrong"
         count = count -15
         timer.innerHTML = count
         console.log("Wrong")
-
     }
+
+
     setTimeout(function(){
         alert.innerText=""
-    
-        }, 1000);
-
+    }, 1000);
 }
+
  function endgame (){
-    // btnStart.classList.add("d-none")
+    btnStart.classList.add("d-none")
     myScore.innaText = count
     addscore.classList.remove("d-none")
-    timecounter.classList.add("d-none")
     quizQuestions.classList.add("d-none")
     addscore.classList.remove("d-none")
+
  }
