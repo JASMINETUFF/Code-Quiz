@@ -1,88 +1,88 @@
-/* setting up boxing sizing for all the element */
-*, *::before, *::after{
-    /* makes it so height and width are easier to style */
-    box-sizing: border-box;
-    /* sets font family */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+body,html{
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    background-image: url(/Background.gif);
+    background-attachment: fixed;
+    background-color: rgb(214,232,235); 
+    color:black;
+    font-size: 10px;
+    font-weight: bolder;
+    background-position:left 0% bottom 0%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
 }
-/* Define the colors for my css */
-:root {
-    --hue-nuetral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
+.btn-primary{
+  background-color: #A74A42;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  grid-template-columns: repeat(3, 200px);
+  font-size: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: lighter;
 }
-/* style the body of the HTML */
-body {
-    --hue: var(--hue-nuetral);
-    padding:0;
-    margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: cornflowerblue;
+#btnScore{
+    color:black;
 }
-/* set up colors for correct answers */
-body.correct{
-    --hue: var(--hue-correct);
+.game-box{
+    background-color: rgb(245, 244, 241 .08);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0.,0,0,0.23);
+    border-radius: 10px;
+    height: 80%;
+    width:  80%;
+    margin-left: 40%;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
-/* set up colors for the wrong answers */
-body.wrong{
-    --hue: var(--hue-correct);
-} 
-/* Design the container */
-.container {
-    width: 800px;
-    max-width: 80%;
-    background-color: aliceblue;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0  10px 2px;
+.answer-item{
+    background: rgb(223, 201, 7);
+    width: 90%;
+    display: inline-block;
+    border-radius:8px;
+    padding: 3px;
 }
-/* aligns the buttons in columns and spaces them out */
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    gap: 10px;
-    margin: 20px 0;
+.text-info{
+    color: brown;
 }
-/* this is design the colors and borders of the button */
-.btn {
-    --hue: var(--hue-nuetral);
-    border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue),100%, 50%);
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: white;
-    outline: none; 
+#title-item{
+   color:darkblue;
 }
-/* this is creating an effect when you hover over the button */
-.btn:hover {
-    border-color: crimson;  
+#btn-start{
+    border:none;
+	padding:6px 0 6px 0;
+	border-radius:8px;
+	background:#A74A42;
+    font:bold 20px;
+	color:#fff;
+
 }
-/* this changes the color when  you get the answer correct */
-.btn.correct{
-    --hue: var(--hue-correct);
-    color: black;
-}
-/* this changes the color when you get the answer wrong */
-.btn.wrong {
-    --hue: var(--hue-wrong):
-}
-/* this styles the start and next buttons */
-.start-btn, .next-btn {
-    font-size: 1.5rem;
+
+#code-title{
+    text-align: center;
     font-weight: bold;
-    padding: 10px 20px;
+    font-size: 2.5em;
+    color:#4E3647;
 }
-/* this centers the button although the start is not center having a hard time figuring that out.  */
-.controls {
-    display:flex; 
-    justify-content:center;
-    align-items: center;
+
+#info{
+    color:#C5B552;
+
 }
-/* this hides and buttons with the class hide */
-.hide {
-    display: none;  
+#h8{
+    color:white;
+    font-weight: bolder;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#timecounter{
+    color: darkslateblue;
+}
+#alert{
+    color: rgb(154, 40, 6);
+    font-size: 10px;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    padding-top: 5px;
 }
