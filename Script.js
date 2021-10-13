@@ -1,3 +1,4 @@
+// Establish Variables
 var quizQuestions = document.getElementById("quiz-questions");
 var timer = document.getElementById("timer");
 var btnStart = document.getElementById("btn-start");
@@ -16,6 +17,7 @@ var info = document.getElementById("info");
 // var submitresult = document.getElementById("submitresult");
 var allScores = [];
 var storedScores = JSON.parse(localStorage.getItem("userData"));
+//Questions and answers for the quiz
 var questions = [
     {
         title: "Commonly used data type Do Not include:---",
@@ -43,6 +45,7 @@ var questions = [
         answer : "console.log"    
     },
 ]
+// Add event listener for 'click' and it will start quiz and show questions and will show/remove elemenets
 btnStart.addEventListener("click", starQuiz);
 function starQuiz(){
     if(storedScores !==null) {
@@ -59,12 +62,13 @@ function starQuiz(){
 
     gametime()
 }
+//add event listener 
 btnScore.addEventListener("click" , function(){
     let name = document.getElementById("inputScore").value
     scorePage(name, count)
 });
 // Time set
-
+//start countdown for time
 function gametime(){
 
     var timeinterval = setInterval(function(){
@@ -73,7 +77,7 @@ function gametime(){
         }, 1000);
 
 }
-
+//Function to present high scores page
 function scorePage(a, b) {
 
     var userData = {
@@ -85,7 +89,7 @@ function scorePage(a, b) {
     localStorage.setItem("userData", JSON.stringify(allScores));
     location.href = "High Scores.HTML";
 }
-
+// function to display next question
 function displayQuestion(question){
     titleitem.innerText=question.title
     question.choices.forEach(element => {
@@ -97,7 +101,7 @@ function displayQuestion(question){
     });
 }
 
-
+//display next question event
 function displaynextQuestion(e){
     currentindex++
     if(currentindex < questions.length){
@@ -120,6 +124,7 @@ function displaynextQuestion(e){
     
      
 }
+//function for if answers are right or wrong
 function correction(response){
     
     if(response){
