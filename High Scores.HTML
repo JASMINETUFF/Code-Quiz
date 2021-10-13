@@ -1,32 +1,32 @@
-var storedScores = JSON.parse(localStorage.getItem("userData"));
-var highScoresArea = document.querySelector("#highScoresList");
-var backBtn = document.querySelector("#backButton");
-var clearBtn = document.querySelector("#clearScores");
+!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- This is the style links -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <!-- This is the title-->
+    <title>Document</title>
 
-function displayScores() {
-    if (storedScores !== null) {
-        var scoreList = document.createElement("ol");
-        scoreList.className = "scoreListClass";
-        for (var i = 0; i < storedScores.length; i++) {
-            var initials = storedScores[i].inits;
-            var scores = storedScores[i].userScore
-            var scoreEntry = document.createElement("li");
-            scoreEntry.innerHTML = initials + " - " + scores;
-            scoreList.appendChild(scoreEntry);
-        }
-        highScoresArea.appendChild(scoreList);
-    }
-};
+</head>
 
-displayScores();
+<body>
+    <!-- This is a wrapper -->
+    <div id="wrapper">
+        <!-- Div for timer -->
+        <div id="currentTime"></div>
+        <!-- Div for quiz content -->
+        <div id="questionsDiv">
+            <h1>Highscores</h1>
+            <ul id="highScore"></ul>
+            <!-- Buttons -->
+            <button id="goBack">Go Back</button>
+            <button id="clear" value="reset">Clear Highscore</button>
+        </div>
+    </div>
+    <script src="HighScores.js"></script>
+</body>
 
-backBtn.addEventListener("click", function () {
-    location.href = "index.html";
-});
-
-clearBtn.addEventListener("click", function () {
-    highScoresArea.innerHTML = "";
-    window.localStorage.clear();
-
-});
+</html>
