@@ -2,7 +2,7 @@
 body,html{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
-    background-image: url(/Background.gif);
+    background-image: url(Code-Quiz/Background.gif);
     background-attachment: fixed;
     background-color: rgb(214,232,235); 
     color:black;
