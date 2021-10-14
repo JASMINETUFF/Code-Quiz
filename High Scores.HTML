@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,28 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- This is the style links -->
-    <link rel="stylesheet" type="text/css" href="Assets/Style.css">
-    <!-- This is the title-->
-    <title>Document</title>
-
+    <title>Code-Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/Style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+        </style>
 </head>
 
 <body>
-    <!-- This is a wrapper -->
-    <div id="wrapper">
-        <!-- Div for timer -->
-        <div id="currentTime"></div>
-        <!-- Div for quiz content -->
-        <div id="questionsDiv">
-            <h1>Highscores</h1>
-            <ul id="highScore"></ul>
-            <!-- Buttons -->
-            <button id="goBack">Go Back</button>
-            <button id="clear" value="reset">Clear Highscore</button>
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="game-box col-lg-8 p-4">
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div id="highScoresDiv" class="col-12">
+                    <h5 id="scoresArea">High Scores</h5>
+                    <div id="highScoresList"></div>
+
+                    <button class="btn btn-primary" id="backButton">Go Back</button>
+                    <button class="btn btn-primary" id="clearScores">Clear Scores</button>
+                </div>
+                <div class="col-4"></div>
+            </div>
+            
         </div>
     </div>
-    <script src="High Scores.js"></script>
 </body>
+
+<script src="High Scores.js"></script>
 
 </html>
